@@ -1,5 +1,5 @@
 local allowedPlayers = {
-   "alan13agoo",
+   "alan14agoo",
     "iamgoingbegood"
 }
 
@@ -85,7 +85,7 @@ Label = Page1:CreateLabel("Command")
 Label:UpdateLabel("Make A Random Anime Art")
 
 Label = Page1:CreateLabel("Command")
-Label:UpdateLabel("Make A Random Anime Art")
+Label:UpdateLabel("Make A Random Animal Art")
 
 Label = Page1:CreateLabel("Command")
 Label:UpdateLabel("Make A Random Landscape Art")
@@ -323,6 +323,11 @@ end)
 
 Button = Page3:CreateButton("Cow", "Instant Art", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/EVctxNir",true))()
+    
+end)
+
+Button = Page3:CreateButton("Halloween Event", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/sVrp70kH",true))()
     
 end)
 
