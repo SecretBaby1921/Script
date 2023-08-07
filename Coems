@@ -79,7 +79,7 @@ TextBox = Page1:CreateBox("Insert Command Here!", 10044538000, function(t)
 end)
 
 Label = Page1:CreateLabel("Current Commands:")
-Label:UpdateLabel("Current Commands")
+Label:UpdateLabel("Current Commands:")
 
 Label = Page1:CreateLabel("Command")
 Label:UpdateLabel("Make A Random Anime Art")
