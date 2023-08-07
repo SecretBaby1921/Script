@@ -331,6 +331,14 @@ Button = Page3:CreateButton("Halloween Event", "Instant Art", function()
     
 end)
 
+Button = Page3:CreateButton("Snorlax", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/RchCg2yM",true))()
+end)
+
+Button = Page3:CreateButton("Vulpix", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/qGAJK5rU",true))()
+end)
+
 -- Misc Section:
 
 Button = Page4:CreateButton("Rejoin Server", "Description", function()
