@@ -1,0 +1,482 @@
+local allowedPlayers = {
+   "alan13agoo"
+}
+
+local function isPlayerAllowed(player)
+   local playerName = player.Name
+   for i = 1, #allowedPlayers do
+      if allowedPlayers[i] == playerName then
+         return true
+      end
+   end
+   return false
+end
+
+local player = game:GetService("Players").LocalPlayer
+if not isPlayerAllowed(player) then
+   player:Kick("You need whitelist baby")
+else
+   local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Lmao2/main/Vanis%20Lib%20Source.lua.txt",true))()
+
+local Window = library:CreateWindow("Demonic HUB", "Paid/Free", 10044538000)
+
+local Tab = Window:CreateTab("Scripts")
+
+local Page1 = Tab:CreateFrame("Generate Arts")
+local Page2 = Tab:CreateFrame("Auto Messages")
+local Page3 = Tab:CreateFrame("Community")
+local Page4 = Tab:CreateFrame("Misc")
+local Page5 = Tab:CreateFrame("Teleports")
+local Page6 = Tab:CreateFrame("Player")
+local Page7 = Tab:CreateFrame("Credits")
+
+-- Art Generator Section
+
+Label = Page1:CreateLabel("Generate Arts")
+Label:UpdateLabel("Generate Arts Menu")
+
+TextBox = Page1:CreateBox("Image Url Input", 10044538000, function(t)
+    local Pixels = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://esohasl.com/pixels?url="..tostring(t)))
+
+    if not Pixels.error then
+        for i, v in pairs(Pixels) do
+            game.Players.LocalPlayer.PlayerGui.MainGui.PaintFrame.GridHolder.Grid[i].BackgroundColor3 = Color3.fromRGB(v[1], v[2], v[3])
+        end
+    else
+        warn(Pixels.error)
+    end
+end)
+
+
+Toggle = Page1:CreateToggle("Enable 5min Timer", "This Enables A Timer On Ready Button.", function(arg)
+    local textLabel = game.Players.LocalPlayer.PlayerGui.MainGui.PaintFrame.NextButton.Label
+    local mins, secs = 5, 0
+
+    repeat
+        textLabel.Text = string.format("%02d:%02d", mins, secs)
+        if secs == 0 then
+            secs = 60
+            mins = mins - 1
+        end
+        secs = secs - 1
+        wait(1)
+    until mins == 0 and secs == 0
+    textLabel.Text = "Ready to submit"
+end)
+
+Label = Page1:CreateLabel("Random Generator")
+Label:UpdateLabel("Random Art Generator")
+
+TextBox = Page1:CreateBox("Insert Command Here!", 10044538000, function(t)
+    if t == "Make A Random Anime Art" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Important/main/Coems", true))()
+    elseif t == "Make A Random Animal Art" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/NOBRO/main/W", true))()
+    elseif t == "Make A Random Landscape Art" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Important2/main/Coems2", true))()
+    end
+end)
+
+Label = Page1:CreateLabel("Current Commands:")
+Label:UpdateLabel("Current Commands")
+
+Label = Page1:CreateLabel("Command")
+Label:UpdateLabel("Make A Random Anime Art")
+
+Label = Page1:CreateLabel("Command")
+Label:UpdateLabel("Make A Random Anime Art")
+
+Label = Page1:CreateLabel("Command")
+Label:UpdateLabel("Make A Random Landscape Art")
+
+-- Auto Messages Section:
+
+Label = Page2:CreateLabel("Auto Messages")
+Label:UpdateLabel("Auto Message")
+
+_G.AutoMessages = false
+local minWait = 2 
+local maxWait = 10
+
+local function autoSpeak(message)
+    local ohString1 = message
+    local ohString2 = "All"
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, ohString2)
+end
+
+local MessageSettings = {}
+
+TextBox = Page2:CreateBox("Insert Texts (You Can Put All the phrases you want)", 10044538000, function(t)
+    table.insert(MessageSettings, t)
+end)
+TextBox = Page2:CreateBox("Insert Cooldown In Secs", 10044538000, function(t)
+    minWait = tonumber(t) or minWait
+    maxWait = minWait * 2
+end)
+
+Toggle = Page2:CreateToggle("Enable Auto Message", "This Is For Enable It", function(t)
+    
+    _G.AutoMessages = t
+    if t then
+    local Notification = require(game:GetService("Players").LocalPlayer.PlayerScripts.Core.Notification)
+local NF = game:GetService("Players").LocalPlayer.PlayerGui.MainGui.NotificationFrame
+
+
+function Notify(Message,Color,BColor)
+    if not Message then return end
+    if not Color then return Notification:Update(tostring(Message)) end
+    if type(Color) == "string" then if string.find(Color,"#") then Color = Color:gsub("#","") end Color = Color3.fromHex(Color) end
+    if type(BColor) == "string" then if string.find(BColor,"#") then BColor = BColor:gsub("#","") end BColor = Color3.fromHex(BColor) end
+    local Old = NF.ChildAdded:Connect(function(child)
+        if child.Name == "Log" and child:FindFirstChild("UIStroke") then
+            child.TextColor3 = Color or Color3.fromRGB(255, 215, 17)
+            child.UIStroke.Color = BColor or Color3.fromRGB(166, 140, 19)
+        end
+    end)
+    Notification:Update(tostring(Message))
+    Old:Disconnect()
+    Old = nil
+end
+
+Notify("Auto Message Has Started!","#750d0d","#000000")
+        while _G.AutoMessages do
+            local waitTime = math.random(minWait, maxWait)
+            print("Waiting for " .. waitTime .. " seconds...")
+            wait(waitTime)
+            autoSpeak(MessageSettings[math.random(1, #MessageSettings)])
+        end
+    end
+end)
+
+-- Community Section
+
+Label = Page3:CreateLabel("Community Section")
+Label:UpdateLabel("Community Section")
+
+Button = Page3:CreateButton("Satoru", "Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/gV9q0rYi",true))()
+    
+end)
+
+Button = Page3:CreateButton("Hero Man", "Art", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/miH5Hvhs",true))()
+   
+end)
+
+Button = Page3:CreateButton("Goku Blue", "Art", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/iaRiJNTY",true))()
+   
+end)
+
+Button = Page3:CreateButton("Goku Blue2", "Art", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/QAzJ6wzQ",true))()
+   
+end)
+
+Button = Page3:CreateButton("Kakashi Eye", "Art", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/64H2Kz1e",true))()
+
+end)
+
+Button = Page3:CreateButton("Boros", "Art", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/YKpmKnde",true))()
+
+end)
+
+Button = Page3:CreateButton("Kirito", "Art", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/LcYp6rG0",true))()
+ 
+end)
+
+Button = Page3:CreateButton("Flash Of Comic", "Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/EAdRK0Bu",true))()
+    
+end)
+
+Button = Page3:CreateButton("Goku Ui", "Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ZkjGfryM",true))()
+    
+end)
+
+Button = Page3:CreateButton("Satoru Eye", "Art", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/tMNjVre2",true))()
+end)
+
+Label = Page3:CreateLabel("Instant Arts")
+Label:UpdateLabel("Instant Arts")
+
+Button = Page3:CreateButton("Groudon", "Instant Art", function()
+ loadstring(game:HttpGet("https://pastebin.com/raw/nY1gJLEq",true))()
+ 
+end)
+
+Button = Page3:CreateButton("MewTwo", "Instant Art", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/SwYFztPp",true))()
+
+end)
+
+Button = Page3:CreateButton("Giratina", "Instant Art", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/0fwnPkDz",true))()
+
+end)
+
+Button = Page3:CreateButton("Colossal Titan Part 1", "Instant Art", function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/CXS40nVS",true))()
+  
+end)
+
+Button = Page3:CreateButton("Colossal Titan Part 2", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/sctr82QQ",true))()
+    
+end)
+
+Button = Page3:CreateButton("Forest", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/aJnmRN6b",true))()
+    
+end)
+
+Button = Page3:CreateButton("Wild Animal", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/aDBj0etp",true))()
+
+end)
+
+Button = Page3:CreateButton("Beautiful", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ZkazKZRq",true))()
+    
+end)
+
+Button = Page3:CreateButton("Kirby", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/PjbdfHYN",true))()
+    
+end)
+
+Button = Page3:CreateButton("Patrick", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/cuvVjQjp",true))()
+    
+end)
+
+Button = Page3:CreateButton("Ninjago Red", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/0Fd9Az64",true))()
+    
+end)
+
+Button = Page3:CreateButton("Dragonite", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Crfubqd4",true))()
+    
+end)
+
+Button = Page3:CreateButton("Majing Android 21", "Instant Art", function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/7tHiw718",true))()
+    
+end)
+
+Button = Page3:CreateButton("Seek", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/E8fHACKF",true))()
+    
+end)
+
+Button = Page3:CreateButton("Penniwise", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/js9KqAZY",true))()
+    
+end)
+
+
+Button = Page3:CreateButton("Baby Dragon", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/vmmQsU0N",true))()
+    
+end)
+
+Button = Page3:CreateButton("Cubone", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/u05d04Cx",true))()
+    
+end)
+
+Button = Page3:CreateButton("Creeper", "Instant Art", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Daddy-dad/main/Coems%20baby",true))()
+
+end)
+
+Button = Page3:CreateButton("Miles Morales", "Instant Art", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Coemssjsns/main/Daddybro",true))()
+    
+end)
+
+Button = Page3:CreateButton("Homero", "Instant Art", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/DadSponso/main/Coems",true))()
+    
+end)
+
+Button = Page3:CreateButton("Phoenix", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/x7wdbVgr",true))()
+    
+end)
+
+Button = Page3:CreateButton("Shiny Charizard", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/SxTBEp3h",true))()
+    
+end)
+
+Button = Page3:CreateButton("Cow", "Instant Art", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/EVctxNir",true))()
+    
+end)
+
+-- Misc Section:
+
+Button = Page4:CreateButton("Rejoin Server", "Description", function()
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
+end)
+
+Button = Page4:CreateButton("Auto Claim Season Pass Rewards", "Description", function()
+    while t do
+        for i = 1, 9 do
+            local args = {
+                [1] = i
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Season"):FireServer(unpack(args))
+            wait(1)
+        end
+        wait(300)
+    end
+end)
+
+Toggle = Page4:CreateToggle("Anti Afk", "Anti Afk", function(arg)
+    local virtualUser = game:GetService("VirtualUser")
+    local player = game:GetService("Players").LocalPlayer
+    local antiAfk = false
+    if toggle and not antiAfk then
+        antiAfk = true
+        player.Idled:Connect(function()
+            virtualUser:CaptureController()
+            virtualUser:ClickButton2(Vector2.new())
+        end)
+    else
+        antiAfk = false
+        player.Idled:Disconnect()
+    end
+end)
+ 
+Button = Page4:CreateButton("ServerHop", "Sends To Other Server", function()
+    local TeleportService = game:GetService("TeleportService")
+    local HttpService = game:GetService("HttpService")
+    local placeId = game.PlaceId
+    local servers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..placeId.."/servers/Public?sortOrder=Asc&limit=100")).data
+    local randomServer = servers[math.random(1, #servers)]
+    TeleportService:TeleportToPlaceInstance(placeId, randomServer.id, game.Players.LocalPlayer)
+end)
+
+Button = Page4:CreateButton("Claim Codes", "Description", function()
+    local codes = {
+        "egghunt",
+        "clover",
+        "1year",
+        "christmas",
+        "tipjar",
+        "hallowart",
+        "frankenpablo",
+        "art300",
+        "colors300",
+        "brush250",
+        "starvingart",
+        "100million",
+        "paintbrush250",
+        "pixelart",
+        "fartist",
+        "pablo250",
+        "monalisa200",
+        "easterart",
+        "picasso250",
+        "pablo300",
+        "bobux",
+        "artcoin",
+        "starving"
+    }
+
+    local remote = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Codes")
+
+    for i, code in ipairs(codes) do
+        local args = {
+            [1] = code
+        }
+
+        wait(i * 1.5)
+        remote:InvokeServer(unpack(args))
+    end
+end)
+
+Label = Page5:CreateLabel("Teleports")
+Label:UpdateLabel("Teleports")
+
+Button = Page5:CreateButton("Effects And Frames", "Teleport", function()
+    function TeleportToCoordinates(x, y, z)
+        local plr = game.Players.LocalPlayer
+        local humanoidRootPart = plr.Character.HumanoidRootPart
+        humanoidRootPart.CFrame = CFrame.new(x, y, z)
+    end
+
+    TeleportToCoordinates(31, -3, 16)
+end)
+
+Button = Page5:CreateButton("Limited Frames And Effects.", "Teleports", function()
+    function TeleportToCoordinates(x, y, z)
+        local plr = game.Players.LocalPlayer
+        local humanoidRootPart = plr.Character.HumanoidRootPart
+        humanoidRootPart.CFrame = CFrame.new(x, y, z)
+    end
+
+    TeleportToCoordinates(-171, 3, -8)
+end)
+
+Button = Page5:CreateButton("Museum", "Teleport", function()
+    function TeleportToCoordinates(x, y, z)
+        local plr = game.Players.LocalPlayer
+        local humanoidRootPart = plr.Character.HumanoidRootPart
+        humanoidRootPart.CFrame = CFrame.new(x, y, z)
+    end
+
+    TeleportToCoordinates(274, 8, -11)
+end)
+
+Button = Page5:CreateButton("Claim Daily Reward", "Teleport", function()
+   local teleportPart = game:GetService("Workspace").DailyReward.Touch
+
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+
+    if character then
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+
+        if humanoidRootPart then
+            humanoidRootPart.CFrame = teleportPart.CFrame
+        end
+    end
+end)
+
+-- Player Section
+
+local jumpPowerTextbox = Page6:CreateBox("Insert JumpPower", 10044538000, function(value)
+    local jumpPower = tonumber(value)
+    if jumpPower then
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpPower
+    end
+end)
+
+
+local walkSpeedTextbox = Page6:CreateBox("TextBox", 10044538000, function(value)
+    local walkSpeed = tonumber(value)
+    if walkSpeed then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+    end
+end)
+
+-- Credits Section
+
+Label = Page7:CreateLabel("Develoved By alan11ago#8475 And SponsoParNordVpn#7360")
+Label:UpdateLabel("Develoved By alan11ago#8475 And SponsoParNordVpn#7360")
+end
