@@ -344,6 +344,7 @@ end)
 -- Get Robux Section:
 Button = Page4:CreateButton("Tp To Richest Player", "Teleport", function()
 local players = game:GetService("Players"):GetPlayers()
+local marketplaceService = game:GetService("MarketplaceService")
 
 local playerWithMostExpensiveAvatar = nil
 local highestPrice = 0
@@ -351,22 +352,30 @@ local highestPrice = 0
 for _, player in ipairs(players) do
     local userId = player.UserId
     local success, result = pcall(function()
-        return game:GetService("MarketplaceService"):GetProductInfo(userId)
+        return marketplaceService:GetProductInfo(userId)
     end)
     
     if success then
         local price = result.PriceInRobux
+        print(player.Name .. "'s avatar price: " .. tostring(price) .. " Robux")
         
         if price and price > highestPrice then
             highestPrice = price
             playerWithMostExpensiveAvatar = player
         end
+    else
+        warn("Failed to retrieve avatar info for player: " .. player.Name)
     end
 end
 
 if playerWithMostExpensiveAvatar then
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
-        playerWithMostExpensiveAvatar.Character.HumanoidRootPart.CFrame
+    local character = playerWithMostExpensiveAvatar.Character
+    if character then
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart then
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame
+        end
+    end
 end
 end)
 
