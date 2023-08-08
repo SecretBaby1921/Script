@@ -411,7 +411,7 @@ if targetHumanoidRootPart then
 end
 end)
 
-TextBox = Page3:CreateBox("Insert Walkspeed", 10044538000, function(t)
+TextBox = Page4:CreateBox("Insert Walkspeed Of WalkTo Random Player", 10044538000, function(t)
     local player = game.Players.LocalPlayer
     local players = game.Players:GetPlayers()
 
