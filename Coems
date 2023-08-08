@@ -411,46 +411,6 @@ if targetHumanoidRootPart then
 end
 end)
 
-TextBox = Page4:CreateBox("Insert Walkspeed Of WalkTo Random Player", 10044538000, function(t)
-    local player = game.Players.LocalPlayer
-    local players = game.Players:GetPlayers()
-
-    local randomPlayer = players[math.random(1, #players)]
-    local targetCharacter = randomPlayer.Character
-    local targetHumanoidRootPart = targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart")
-
-    if targetHumanoidRootPart then
-        local playerCharacter = player.Character
-        local playerHumanoidRootPart = playerCharacter and playerCharacter:FindFirstChild("HumanoidRootPart")
-
-        if playerHumanoidRootPart then
-            local distanceThreshold = 5
-            local currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
-
-            local moveSpeedTextbox = Instance.new("TextBox")
-            moveSpeedTextbox.PlaceholderText = "Move Speed"
-            moveSpeedTextbox.Parent = game:GetService("CoreGui")
-            moveSpeedTextbox.Position = UDim2.new(0.5, 0, 0.9, 0)
-            moveSpeedTextbox.Size = UDim2.new(0, 100, 0, 20)
-            moveSpeedTextbox.Text = "29"
-
-            while currentDistance > distanceThreshold do
-                local moveDirection = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Unit
-                local moveSpeed = tonumber(moveSpeedTextbox.Text) or 0
-
-                playerHumanoidRootPart.Velocity = moveDirection * moveSpeed
-
-                currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
-
-                wait()
-            end
-
-            playerHumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-            moveSpeedTextbox:Destroy()
-        end
-    end
-end)
-
 
 -- Misc Section:
 
