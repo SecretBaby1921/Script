@@ -379,6 +379,38 @@ if playerWithMostExpensiveAvatar then
 end
 end)
 
+Button = Page:CreateButton("WalkTo Random Player", "Walk", function()
+local player = game.Players.LocalPlayer
+local players = game.Players:GetPlayers()
+
+local randomPlayer = players[math.random(1, #players)]
+local targetCharacter = randomPlayer.Character
+local targetHumanoidRootPart = targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart")
+
+if targetHumanoidRootPart then
+    local playerCharacter = player.Character
+    local playerHumanoidRootPart = playerCharacter and playerCharacter:FindFirstChild("HumanoidRootPart")
+
+    if playerHumanoidRootPart then
+        local distanceThreshold = 5
+        local currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
+
+        while currentDistance > distanceThreshold do
+            local moveDirection = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Unit
+            local moveSpeed = 29
+
+            playerHumanoidRootPart.Velocity = moveDirection * moveSpeed
+
+            currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
+
+            wait()
+        end
+
+        playerHumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+    end
+end
+end)
+
 -- Misc Section:
 
 Button = Page5:CreateButton("Rejoin Server", "Description", function()
