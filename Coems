@@ -379,38 +379,45 @@ if playerWithMostExpensiveAvatar then
 end
 end)
 
-Button = Page4:CreateButton("WalkTo Random Player", "Walk", function()
-local player = game.Players.LocalPlayer
-local players = game.Players:GetPlayers()
-
-local randomPlayer = players[math.random(1, #players)]
-local targetCharacter = randomPlayer.Character
-local targetHumanoidRootPart = targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart")
-
-if targetHumanoidRootPart then
-    local playerCharacter = player.Character
-    local playerHumanoidRootPart = playerCharacter and playerCharacter:FindFirstChild("HumanoidRootPart")
-
-    if playerHumanoidRootPart then
-        local distanceThreshold = 5
-        local currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
-
-        while currentDistance > distanceThreshold do
-            local moveDirection = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Unit
-            local moveSpeed = 29
-
-            playerHumanoidRootPart.Velocity = moveDirection * moveSpeed
-
-            currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
-
-            wait()
-        end
-
-        playerHumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+local moveSpeed = 16
+local TextBox = Page4:CreateBox("Insert Walkspeed Of Walkto", tostring(moveSpeed), function(text)
+    moveSpeed = tonumber(text)
+    if not moveSpeed then
+        moveSpeed = 16
     end
-end
+    TextBox.Text = tostring(moveSpeed)
 end)
 
+local Button = Page4:CreateButton("WalkTo Random Player", "Walk", function()
+    local player = game.Players.LocalPlayer
+    local players = game.Players:GetPlayers()
+    local randomPlayer = players[math.random(1, #players)]
+    local targetCharacter = randomPlayer.Character
+    local targetHumanoidRootPart = targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart")
+
+    if targetHumanoidRootPart then
+        local playerCharacter = player.Character
+        local playerHumanoidRootPart = playerCharacter and playerCharacter:FindFirstChild("HumanoidRootPart")
+
+        if playerHumanoidRootPart then
+            local distanceThreshold = 5
+            local currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
+
+            while currentDistance > distanceThreshold do
+                local moveDirection = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Unit
+
+                player.Character.Humanoid.WalkSpeed = moveSpeed
+                playerHumanoidRootPart.Velocity = moveDirection * moveSpeed
+
+                currentDistance = (targetHumanoidRootPart.Position - playerHumanoidRootPart.Position).Magnitude
+                wait()
+            end
+
+            player.Character.Humanoid.WalkSpeed = 16
+            playerHumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+        end
+    end
+end)
 
 -- Misc Section:
 
