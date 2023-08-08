@@ -379,7 +379,7 @@ if playerWithMostExpensiveAvatar then
 end
 end)
 
-Button = Page:CreateButton("WalkTo Random Player", "Walk", function()
+Button = Page4:CreateButton("WalkTo Random Player", "Walk", function()
 local player = game.Players.LocalPlayer
 local players = game.Players:GetPlayers()
 
