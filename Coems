@@ -342,6 +342,10 @@ loadstring(game:HttpGet("https://pastebin.com/raw/qGAJK5rU",true))()
 end)
 
 -- Get Robux Section:
+
+Label = Page4:CreateLabel("Get Buyers")
+Label:UpdateLabel("Get Buyers")
+
 Button = Page4:CreateButton("Tp To Richest Player", "Teleport", function()
 local players = game:GetService("Players"):GetPlayers()
 local marketplaceService = game:GetService("MarketplaceService")
