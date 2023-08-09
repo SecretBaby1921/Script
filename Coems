@@ -72,7 +72,7 @@ Label:UpdateLabel("Random Art Generator")
 
 TextBox = Page1:CreateBox("Insert Command Here!", 10044538000, function(t)
     if t == "Make A Random Anime Art" then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Important/main/Coems", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/effective-octo-carnival/main/Qb2",true))()
     elseif t == "Make A Random Animal Art" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/NOBRO/main/W", true))()
     elseif t == "Make A Random Landscape Art" then
