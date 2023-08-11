@@ -423,6 +423,31 @@ local Button = Page4:CreateButton("WalkTo Random Player", "Walk", function()
     end
 end)
 
+Label = Page4:CreateLabel("Server")
+Label:UpdateLabel("Server")
+
+Button = Page4:CreateButton("Find Attractive Server", "Its try to find a good server!", function()
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local placeId = 8916037983 -- El ID del juego "Starving Artists (DONATION GAME)"
+
+local servers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..placeId.."/servers/Public?sortOrder=Asc&limit=100")).data
+
+local filteredServers = {}
+for i, server in ipairs(servers) do
+    if server.playing >= 15 and server.playing <= 18 then
+        table.insert(filteredServers, server)
+    end
+end
+
+if #filteredServers > 0 then
+    local randomServer = filteredServers[math.random(1, #filteredServers)]
+    TeleportService:TeleportToPlaceInstance(placeId, randomServer.id, game.Players.LocalPlayer)
+else
+    print("Theres No Good Server :(")
+end
+end)
+
 -- Misc Section:
 
 Button = Page5:CreateButton("Rejoin Server", "Description", function()
