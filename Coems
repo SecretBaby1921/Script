@@ -207,6 +207,10 @@ Button = Page3:CreateButton("Satoru Eye", "Art", function()
  loadstring(game:HttpGet("https://pastebin.com/raw/tMNjVre2",true))()
 end)
 
+Button= Page3:CreateButton("Nagi", "Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/cRwrVCCD",true))()
+end)
+
 Label = Page3:CreateLabel("Instant Arts")
 Label:UpdateLabel("Instant Arts")
 
