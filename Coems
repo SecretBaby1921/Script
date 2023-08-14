@@ -406,6 +406,10 @@ Button = Page3:CreateButton("Ghost Rider", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/5TEkNP3v",true))()
 end)
 
+Button = Page3:CreateButton("Onichan [Anime Girl]", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/jyE4XU41",true))()
+end)
+
 
 -- Get Robux Section:
 
