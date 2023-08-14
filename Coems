@@ -398,6 +398,10 @@ Button = Page3:CreateButton("Orange Cat", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/phmsKVp5",true))()
 end)
 
+Button = Page3:CreateButton("Veggeto Blue", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Fyu5W68p",true))()
+end)
+
 
 
 -- Get Robux Section:
