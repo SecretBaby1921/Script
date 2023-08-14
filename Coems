@@ -410,6 +410,9 @@ Button = Page3:CreateButton("Onichan [Anime Girl]", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/jyE4XU41",true))()
 end)
 
+Button = Page3:CreateButton("Madara Uchiha", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/1ydKiFBx",true))()
+end)
 
 -- Get Robux Section:
 
