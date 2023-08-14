@@ -414,6 +414,14 @@ Button = Page3:CreateButton("Madara Uchiha", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/1ydKiFBx",true))()
 end)
 
+Button = Page3:CreateButton("Love", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/YhMrGYXA",true))()
+end)
+
+Button = Page3:CreateButton("GigaChad", "Realistic Instant Art", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Rjr/main/O",true))()
+end)
+
 -- Get Robux Section:
 
 Label = Page4:CreateLabel("Get Buyers")
