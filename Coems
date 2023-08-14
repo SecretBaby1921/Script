@@ -386,6 +386,19 @@ Button = Page3:CreateButton("Ace", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/2V6aEW4r",true))()
 end)
 
+Button = Page3:CreateButton("Bee", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/gTdTcd0w",true))()
+end)
+
+Button = Page3:CreateButton("Sunday Beach", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/LF29jhVe",true))()
+end)
+
+Button = Page3:CreateButton("Orange Cat", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/phmsKVp5",true))()
+end)
+
+
 
 -- Get Robux Section:
 
