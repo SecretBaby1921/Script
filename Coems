@@ -1,7 +1,8 @@
 local allowedPlayers = {
    "alan14ago",
     "iamgoingbegood",
-    "Aistllx1"
+    "Aistllx1",
+    "alan15bam"
 }
 
 local function isPlayerAllowed(player)
@@ -344,6 +345,47 @@ end)
 Button = Page3:CreateButton("Vulpix", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/qGAJK5rU",true))()
 end)
+
+Button = Page3:CreateButton("Giraffe", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/UYT3DMRL",true))()
+end)
+
+Button = Page3:CreateButton("Demonic Pumpkin", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/6ADXv1hb",true))()
+end)
+
+Button = Page3:CreateButton("Elmo Blue", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/qT3xf0yZ",true))()
+end)
+
+Button = Page3:CreateButton("City Landscape", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/01TNB0PR",true))()
+end)
+
+Button = Page3:CreateButton("Cr7", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/JibaBRjt",true))()
+end)
+
+Button = Page3:CreateButton("Rich King NFT", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/XFnf2Gyq",true))()
+end)
+
+Button = Page3:CreateButton("Blastoise", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/LBMWqWGM",true))()
+end)
+
+Button = Page3:CreateButton("Sylveon", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/gKBhFRBX",true))()
+end)
+
+Button = Page3:CreateButton("Happy Chick", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/PuTfEbxs",true))()
+end)
+
+Button = Page3:CreateButton("Ace", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/2V6aEW4r",true))()
+end)
+
 
 -- Get Robux Section:
 
