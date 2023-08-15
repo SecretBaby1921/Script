@@ -418,6 +418,10 @@ Button = Page3:CreateButton("Love", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/YhMrGYXA",true))()
 end)
 
+Button = Page3:CreateButton("swan on the water", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/wiSn52NN",true))()
+end)
+
 Button = Page3:CreateButton("GigaChad", "Realistic Instant Art", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Rjr/main/O",true))()
 end)
