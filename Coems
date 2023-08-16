@@ -514,8 +514,7 @@ Label:UpdateLabel("Server")
 Button = Page4:CreateButton("Find Attractive Server", "Its try to find a good server!", function()
 local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
-local placeId = 8916037983 -- El ID del juego "Starving Artists (DONATION GAME)"
-
+local placeId = 8916037983
 local servers = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..placeId.."/servers/Public?sortOrder=Asc&limit=100")).data
 
 local filteredServers = {}
