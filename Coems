@@ -427,6 +427,14 @@ Button = Page3:CreateButton("Zombie", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/T3gsW5Ft",true))()
 end)
 
+Button = Page3:CreateButton("Fuecoco", "Instant Art, function()
+loadstring(game:HttpGet("https://pastebin.com/raw/QrYNn6ks",true))()
+end)
+
+Button = Page3:CreateButton("Demon Knight", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Tfn7VaNz",true))()
+end)
+
 Button = Page3:CreateButton("GigaChad", "Realistic Instant Art", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Rjr/main/O",true))()
 end)
