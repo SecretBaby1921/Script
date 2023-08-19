@@ -79,7 +79,9 @@ TextBox = Page1:CreateBox("Insert Command Here!", 10044538000, function(t)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/NOBRO/main/W", true))()
     elseif t == "Make A Random Landscape Art" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Important2/main/Coems2", true))()
-    end
+elseif t == "Make A Random Anime Girl Art" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/RandomArtsCommands/main/RandomGirlFixTry",true))()
+   end
 end)
 
 Label = Page1:CreateLabel("Current Commands:")
@@ -93,6 +95,9 @@ Label:UpdateLabel("Make A Random Animal Art")
 
 Label = Page1:CreateLabel("Command")
 Label:UpdateLabel("Make A Random Landscape Art")
+
+Label = Page1:CreateLabel("Command")
+Label:UpdateLabel("Make A Random Anime Girl Art")
 
 -- Auto Messages Section:
 
