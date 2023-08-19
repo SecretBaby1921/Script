@@ -3,7 +3,8 @@ local allowedPlayers = {
     "iamgoingbegood",
     "Aistllx1",
     "alan15bam",
-    "prodnivlac"
+    "prodnivlac",
+    "xaxadabest"
 }
 
 local function isPlayerAllowed(player)
