@@ -94,9 +94,6 @@ Label:UpdateLabel("Make A Random Animal Art")
 Label = Page1:CreateLabel("Command")
 Label:UpdateLabel("Make A Random Landscape Art")
 
-Label = Page1:CreateLabel("Command:)
-Label:UpdateLabel("Make A Random Anime Girl Art")
-
 -- Auto Messages Section:
 
 Label = Page2:CreateLabel("Auto Messages")
