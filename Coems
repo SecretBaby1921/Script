@@ -427,7 +427,7 @@ Button = Page3:CreateButton("Zombie", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/T3gsW5Ft",true))()
 end)
 
-Button = Page3:CreateButton("Fuecoco", "Instant Art, function()
+Button = Page3:CreateButton("Fuecoco", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/QrYNn6ks",true))()
 end)
 
