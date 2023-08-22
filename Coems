@@ -228,6 +228,10 @@ Button = Page3:CreateButton("Goku Ultra Instinct", "Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/bdCwWp0g",true))()
 end)
 
+Button = Page3:CreateButton("Upgraded Titan Cameraman", "Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/ah1rRHXn",true))()
+end)
+
 Label = Page3:CreateLabel("Instant Arts")
 Label:UpdateLabel("Instant Arts")
 
