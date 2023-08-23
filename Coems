@@ -32,10 +32,11 @@ local Page1 = Tab:CreateFrame("Generate Arts")
 local Page2 = Tab:CreateFrame("Auto Messages")
 local Page3 = Tab:CreateFrame("Community")
 local Page4 = Tab:CreateFrame("Get Robux")
-local Page5 = Tab:CreateFrame("Misc")
-local Page6 = Tab:CreateFrame("Teleports")
-local Page7 = Tab:CreateFrame("Player")
-local Page8 = Tab:CreateFrame("Credits")
+local Page5 = Tab:CreateFrame("Images")
+local Page6 = Tab:CreateFrame("Misc")
+local Page7 = Tab:CreateFrame("Teleports")
+local Page8 = Tab:CreateFrame("Player")
+local Page9 = Tab:CreateFrame("Credits")
 
 -- Art Generator Section
 
@@ -564,15 +565,60 @@ else
 end
 end)
 
+-- Images Section:
+
+Label = Page3:CreateLabel("Images")
+Label:UpdateLabel("Images")
+
+Button = Page5:CreateButton("Cat Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Random%20Cat",true))()
+end)
+
+Button = Page5:CreateButton("DragonBall Super Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Dragon%20Ball%20Super",true))()
+end)
+
+Button = Page5:CreateButton("One Piece Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/One%20Piece",true))()
+end)
+
+Button = Page5:CreateButton("Boku No Hero Academy Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Boku%20No%20Hero%20Academy",true))()
+end)
+
+Button = Page5:CreateButton("Jujutsu Kaisen Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Jujutsu%20Kaisen",true))()
+end)
+
+Button = Page5:CreateButton("Demon Slayer Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Demon%20Slayer",true))()
+end)
+
+Button = Page5:CreateButton("Seven Deadly Sins Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Seven%20Deadly%20Sins",true))()
+end)
+
+Button = Page5:CreateButton("Black Clover Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Black%20Clover",true))()
+end)
+
+Button = Page5:CreateButton("Blue Lock Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Blue%20Lock",true))()
+end)
+
+Button = Page5:CreateButton("Cat Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/LandScapes",true))()
+end)
+
 -- Misc Section:
 
-Button = Page5:CreateButton("Rejoin Server", "Description", function()
+Button = Page6:CreateButton("Rejoin Server", "Description", function()
     local ts = game:GetService("TeleportService")
     local p = game:GetService("Players").LocalPlayer
     ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
 end)
 
-Button = Page5:CreateButton("Auto Claim Season Pass Rewards", "Description", function()
+Button = Page6:CreateButton("Auto Claim Season Pass Rewards", "Description", function()
     while t do
         for i = 1, 9 do
             local args = {
@@ -585,7 +631,7 @@ Button = Page5:CreateButton("Auto Claim Season Pass Rewards", "Description", fun
     end
 end)
 
-Toggle = Page5:CreateToggle("Anti Afk", "Anti Afk", function(arg)
+Toggle = Page6:CreateToggle("Anti Afk", "Anti Afk", function(arg)
     local virtualUser = game:GetService("VirtualUser")
     local player = game:GetService("Players").LocalPlayer
     local antiAfk = false
@@ -601,7 +647,7 @@ Toggle = Page5:CreateToggle("Anti Afk", "Anti Afk", function(arg)
     end
 end)
  
-Button = Page5:CreateButton("ServerHop", "Sends To Other Server", function()
+Button = Page6:CreateButton("ServerHop", "Sends To Other Server", function()
     local TeleportService = game:GetService("TeleportService")
     local HttpService = game:GetService("HttpService")
     local placeId = game.PlaceId
@@ -610,7 +656,7 @@ Button = Page5:CreateButton("ServerHop", "Sends To Other Server", function()
     TeleportService:TeleportToPlaceInstance(placeId, randomServer.id, game.Players.LocalPlayer)
 end)
 
-Button = Page5:CreateButton("Claim Codes", "Description", function()
+Button = Page6:CreateButton("Claim Codes", "Description", function()
     local codes = {
         "egghunt",
         "clover",
@@ -649,10 +695,10 @@ Button = Page5:CreateButton("Claim Codes", "Description", function()
     end
 end)
 
-Label = Page6:CreateLabel("Teleports")
+Label = Page7:CreateLabel("Teleports")
 Label:UpdateLabel("Teleports")
 
-Button = Page6:CreateButton("Effects And Frames", "Teleport", function()
+Button = Page7:CreateButton("Effects And Frames", "Teleport", function()
     function TeleportToCoordinates(x, y, z)
         local plr = game.Players.LocalPlayer
         local humanoidRootPart = plr.Character.HumanoidRootPart
@@ -662,7 +708,7 @@ Button = Page6:CreateButton("Effects And Frames", "Teleport", function()
     TeleportToCoordinates(31, -3, 16)
 end)
 
-Button = Page6:CreateButton("Limited Frames And Effects.", "Teleports", function()
+Button = Page7:CreateButton("Limited Frames And Effects.", "Teleports", function()
     function TeleportToCoordinates(x, y, z)
         local plr = game.Players.LocalPlayer
         local humanoidRootPart = plr.Character.HumanoidRootPart
@@ -672,7 +718,7 @@ Button = Page6:CreateButton("Limited Frames And Effects.", "Teleports", function
     TeleportToCoordinates(-171, 3, -8)
 end)
 
-Button = Page6:CreateButton("Museum", "Teleport", function()
+Button = Page7:CreateButton("Museum", "Teleport", function()
     function TeleportToCoordinates(x, y, z)
         local plr = game.Players.LocalPlayer
         local humanoidRootPart = plr.Character.HumanoidRootPart
@@ -682,7 +728,7 @@ Button = Page6:CreateButton("Museum", "Teleport", function()
     TeleportToCoordinates(274, 8, -11)
 end)
 
-Button = Page6:CreateButton("Claim Daily Reward", "Teleport", function()
+Button = Page7:CreateButton("Claim Daily Reward", "Teleport", function()
    local teleportPart = game:GetService("Workspace").DailyReward.Touch
 
     local player = game.Players.LocalPlayer
@@ -697,9 +743,25 @@ Button = Page6:CreateButton("Claim Daily Reward", "Teleport", function()
     end
 end)
 
+Button = Page7:CreateButton("Sit On Chair", "Teleport", function()
+local player = game.Players.LocalPlayer
+local username = player.Name
+
+local teleportPart = game:GetService("Workspace").Plots[username].Stool
+
+local character = player.Character
+
+if character then
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        humanoidRootPart.CFrame = teleportPart.CFrame
+    end
+end
+end)
+
 -- Player Section
 
-local jumpPowerTextbox = Page7:CreateBox("Insert JumpPower", 10044538000, function(value)
+local jumpPowerTextbox = Page8:CreateBox("Insert JumpPower", 10044538000, function(value)
     local jumpPower = tonumber(value)
     if jumpPower then
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpPower
@@ -707,7 +769,7 @@ local jumpPowerTextbox = Page7:CreateBox("Insert JumpPower", 10044538000, functi
 end)
 
 
-local walkSpeedTextbox = Page7:CreateBox("Insert WalkSpeed", 10044538000, function(value)
+local walkSpeedTextbox = Page8:CreateBox("Insert WalkSpeed", 10044538000, function(value)
     local walkSpeed = tonumber(value)
     if walkSpeed then
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
@@ -716,6 +778,6 @@ end)
 
 -- Credits Section
 
-Label = Page8:CreateLabel("Develoved By alan11ago#8475 And SponsoParNordVpn#7360")
+Label = Page9:CreateLabel("Develoved By alan11ago#8475 And SponsoParNordVpn#7360")
 Label:UpdateLabel("Develoved By alan11ago#8475 And SponsoParNordVpn#7360")
 end
