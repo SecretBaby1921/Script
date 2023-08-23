@@ -587,6 +587,19 @@ if (CopyCloneToClipboard) then
 else
 	ClonePlayerCanvas(Target, Canvas);
 end
+local player = game.Players.LocalPlayer
+local username = player.Name
+
+local teleportPart = game:GetService("Workspace").Plots[username].Stool
+
+local character = player.Character
+
+if character then
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart then
+        humanoidRootPart.CFrame = teleportPart.CFrame
+    end
+end
 end)
 
 
