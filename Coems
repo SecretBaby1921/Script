@@ -467,7 +467,7 @@ Button = Page3:CreateButton("MagMort", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/BdtTkdzE",true))()
 end)
 
-Button = Page3:CreateButton("Osshawot", "Instant Art", function(
+Button = Page3:CreateButton("Osshawot", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/f1RzHgFh",true))()
 end)
 
