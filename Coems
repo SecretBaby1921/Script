@@ -587,7 +587,7 @@ end)
 
 -- Images Section:
 
-Label = Page3:CreateLabel("Images")
+Label = Page5:CreateLabel("Images")
 Label:UpdateLabel("Images")
 
 Button = Page5:CreateButton("Cat Images", "Copy To Clipboard A Random Image", function()
