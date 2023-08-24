@@ -755,7 +755,15 @@ Button = Page6:CreateButton("Blue Lock Images", "Copy To Clipboard A Random Imag
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Blue%20Lock",true))()
 end)
 
-Button = Page6:CreateButton("Cat Images", "Copy To Clipboard A Random Image", function()
+Button = Page6:CreateButton("Fire Force Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Fire%20Force",true))()
+end)
+
+Button = Page6:CreateButton("Fate Images", "Copy To Clipboard A Random Image", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/Fate",true))()
+end)
+
+Button = Page6:CreateButton("Landscapes Images", "Copy To Clipboard A Random Image", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Random-images/main/LandScapes",true))()
 end)
 
