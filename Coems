@@ -476,6 +476,10 @@ Button = Page3:CreateButton("Pancham", "Instant Art", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/QkHNuYDK",true))()
 end)
 
+Button = Page3:CreateButton("Lucario", "Instant Art", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/WcyVJBhH",true))()
+end)
+
 Button = Page3:CreateButton("GigaChad", "Realistic Instant Art", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SecretBaby1921/Rjr/main/O",true))()
 end)
