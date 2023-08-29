@@ -81,7 +81,6 @@ Toggle = Page1:CreateToggle("Enable 5min Timer", "This Enables A Timer On Ready 
 end)
 
 Label = Page1:CreateLabel("Random Art")
-Label = Page1:CreateLabel("Random Art")
 
 Button  = Page1:CreateButton("Random Art", "Generates A Random Art From A Website", function()
 local Pixels = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://sponkeyapi.lerat9967.repl.co/random"))
