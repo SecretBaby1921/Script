@@ -80,6 +80,21 @@ Toggle = Page1:CreateToggle("Enable 5min Timer", "This Enables A Timer On Ready 
     textLabel.Text = "Ready to submit"
 end)
 
+Label = Page1:CreateLabel("Random Art")
+Label = Page1:CreateLabel("Random Art")
+
+Button  = Page1:CreateButton("Random Art", "Generates A Random Art From A Website", function()
+local Pixels = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://sponkeyapi.lerat9967.repl.co/random"))
+
+    if not Pixels.error then
+        for i, v in pairs(Pixels) do
+            game.Players.LocalPlayer.PlayerGui.MainGui.PaintFrame.GridHolder.Grid[i].BackgroundColor3 = Color3.fromRGB(v[1], v[2], v[3])
+        end
+    else
+        warn(Pixels.error)
+    end
+end)
+
 Label = Page1:CreateLabel("Random Generator")
 Label:UpdateLabel("Random Art Generator")
 
